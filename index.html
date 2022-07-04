@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Layer G</title>
+</head>
+<body>
+   <div id="main-text">
+        <h1>Layer G</h1>
+        <h2>Software Consulting</h2>
+        <div id="options">
+            <div class="option" data-info="fullstack">
+                <p>Full-stack Web Development</p>
+            </div>
+            <div class="option" data-info="blockchain">
+                <p>Blockchain Development</p>
+            </div>
+            <div class="option" data-info="contracts">
+                <p>Smart Contracts</p>
+            </div>
+            <div class="option" data-info="backend">
+                <p>Backend Solutions</p>
+            </div>
+        </div>
+   </div> 
+
+   <!-- modals -->
+   <div id="fullstack" class="modal">
+        <div class="modal-content">
+            <span class="close">&times</span>
+            <p>text in my modalll1</p>
+        </div>
+   </div>
+   <div id="blockchain" class="modal">
+        <div class="modal-content">
+            <span class="close">&times</span>
+            <p>text in my modalll2</p>
+        </div>
+   </div>
+   <div id="contracts" class="modal">
+        <div class="modal-content">
+            <span class="close">&times</span>
+            <p>text in my modalll3</p>
+        </div>
+   </div>
+   <div id="backend" class="modal">
+        <div class="modal-content">
+            <span class="close">&times</span>
+            <p>text in my modalll4</p>
+        </div>
+   </div>
+<script>
+    const options = document.getElementsByClassName('option');
+    const modals  = document.getElementsByClassName('modal');
+    const closers = document.getElementsByClassName('close');
+
+    // set functions to open/close modals
+    for (i=0; i < options.length; i++){
+        options[i].onclick = function() {
+            const info = this.dataset.info;
+            document.getElementById(info).style.display = 'block';
+        }
+
+        closers[i].onclick = function() {
+            this.parentElement.parentElement.style.display = 'none';
+     }
+
+        // close modal with background click
+        modals[i].onclick = function() {
+            this.style.display = 'none';
+        }
+    };
+
+</script>
+</body>
+</html>
